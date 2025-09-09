@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://www.cloudflare.com/favicon.ico"
+    />
+    <title>Camo Text - Steganography Tool</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="title">🕵️ Camo Text</h1>
+        <p class="subtitle">
+          Hide secret messages in plain sight using invisible characters
+        </p>
+      </header>
+
+      <main class="main-content">
+        <!-- Decode message -->
+        <div class="card">
+          <h2 class="card-title">Decode message</h2>
+          <div class="input-group">
+            <label for="stego-text">Steganographic Text: </label>
+
+            <div class="input-with-button">
+              <textarea
+                id="stego-text"
+                placeholder="Paste the steganographic text here..."
+                rows="4"
+              ></textarea>
+            </div>
+          </div>
+
+          <button id="decode-btn" class="btn btn-primary">
+            <span class="btn-icon">🔓</span>
+            Decode message
+          </button>
+          <button id="paste-stego" class="btn btn-primary">
+            <span class="btn-icon">📋</span> Paste
+          </button>
+
+          <div id="decoded-result" class="result-section" style="display: none">
+            <div class="result-label">
+              <span class="result-icon">📝</span>
+              <span class="result-title">Result</span>
+            </div>
+            <div class="result-box">
+              <div id="decoded-text" class="result-display"></div>
+              <button
+                id="copy-decoded"
+                class="btn btn-secondary btn-small copy-btn"
+                title="Copy decoded message"
+              >
+                📋 Copy
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Encode Secret Message -->
+        <div class="card">
+          <h2 class="card-title">Encode message</h2>
+          <div class="input-group">
+            <label for="cover-text">Cover Text (visible text):</label>
+            <textarea
+              id="cover-text"
+              placeholder="Enter the text that will be visible to everyone..."
+              rows="3"
+            ></textarea>
+          </div>
+
+          <div class="input-group">
+            <label for="secret-text">Secret Message (hidden):</label>
+            <textarea
+              id="secret-text"
+              placeholder="Enter the secret message you want to hide..."
+              rows="3"
+            ></textarea>
+          </div>
+
+          <button id="encode-btn" class="btn btn-primary">
+            <span class="btn-icon">🔒</span>
+            Encode message
+          </button>
+
+          <div id="encoded-result" class="result-section" style="display: none">
+            <div class="result-label">
+              <span class="result-icon">📝</span>
+              <span class="result-title">Result</span>
+            </div>
+            <div class="result-box">
+              <div id="encoded-text" class="result-display"></div>
+              <button
+                id="copy-encoded"
+                class="btn btn-secondary btn-small copy-btn"
+                title="Copy encoded message"
+              >
+                📋 Copy
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <div class="info-section">
+        <h3>How it works:</h3>
+        <p>
+          This tool uses invisible Unicode characters (Zero Width Space and Zero
+          Width Non-Joiner) to hide secret messages within regular text. The
+          hidden message is completely invisible to the naked eye but can be
+          decoded using this tool.
+        </p>
+
+        <div class="features">
+          <div class="feature">
+            <span class="feature-icon">🔐</span>
+            <span>Secure steganography</span>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">👁️</span>
+            <span>Invisible to humans</span>
+          </div>
+          <div class="feature">
+            <span class="feature-icon">⚡</span>
+            <span>Instant encoding/decoding</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>
+        &copy; <a href="https://hungphu.org" target="_blank">PGroup JSC</a>. All
+        rights reserved.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
