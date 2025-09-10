@@ -20,7 +20,10 @@ function encode(coverText, secretText) {
       .map((bit) => INVISIBLE_CHARS[parseInt(bit)])
       .join("");
 
-    return coverText + hidden;
+    if (coverText.length === 0) {
+      return hidden;
+    }
+    return coverText.slice(0, -1) + hidden + coverText.slice(-1);
   } catch (error) {
     throw new Error("Encoding failed: " + error.message);
   }
